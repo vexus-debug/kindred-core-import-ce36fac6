@@ -31,6 +31,8 @@ export interface ClinicTerms {
   /** Label for the treating clinician */
   clinician: string;
   clinicianPlural: string;
+  /** Expense category value for clinic-specific consumables */
+  consumablesCategory: string;
 }
 
 const dentalTerms: ClinicTerms = {
