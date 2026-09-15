@@ -175,7 +175,7 @@ export function useCurrentUserName() {
 
 const DIST_COLORS = [
   "hsl(var(--primary))",
-  "hsl(var(--dental-teal-light))",
+  "hsl(var(--clinic-teal-light))",
   "hsl(var(--gold))",
   "hsl(var(--slate))",
   "hsl(var(--info))",
