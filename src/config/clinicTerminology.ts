@@ -60,6 +60,7 @@ const dentalTerms: ClinicTerms = {
   shopProductDescriptionPlaceholder: "High-quality dental care product...",
   clinician: "Dentist",
   clinicianPlural: "Dentists",
+  consumablesCategory: "dental_consumables",
 };
 
 const eyeTerms: ClinicTerms = {
@@ -90,6 +91,7 @@ const eyeTerms: ClinicTerms = {
   shopProductDescriptionPlaceholder: "High-quality eye care product...",
   clinician: "Optometrist",
   clinicianPlural: "Optometrists",
+  consumablesCategory: "optical_consumables",
 };
 
 const genericTerms: ClinicTerms = {
@@ -118,6 +120,7 @@ const genericTerms: ClinicTerms = {
   shopProductDescriptionPlaceholder: "High-quality care product...",
   clinician: "Clinician",
   clinicianPlural: "Clinicians",
+  consumablesCategory: "clinical_consumables",
 };
 
 export function getClinicTerms(clinicType?: string | null): ClinicTerms {

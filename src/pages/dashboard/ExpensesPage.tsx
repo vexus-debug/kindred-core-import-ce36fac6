@@ -8,18 +8,25 @@ import { Plus, DollarSign, Search, TrendingDown } from "lucide-react";
 import { PageHeader } from "@/components/dashboard/PageHeader";
 import { useExpenses, useCreateExpense, useDeleteExpense } from "@/hooks/useExpenses";
 import { useAuth } from "@/hooks/useAuth";
+import { useClinicTerms } from "@/hooks/useClinicTerms";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 import { format } from "date-fns";
 
-const expenseCategories = [
+const baseExpenseCategories = [
   "supplies", "rent", "utilities", "equipment", "salaries", "marketing", "maintenance",
-  "logistics", "lab_outsourcing", "staff_appraisal", "loan_repayment", "dental_consumables", "other",
+  "logistics", "lab_outsourcing", "staff_appraisal", "loan_repayment",
 ];
 
+function formatCategory(value: string) {
+  return value.replace(/_/g, " ");
+}
+
 export default function ExpensesPage() {
+  const terms = useClinicTerms();
+  const expenseCategories = [...baseExpenseCategories, terms.consumablesCategory, "other"];
   const { data: expenses = [] } = useExpenses();
   const { user } = useAuth();
   const createExpense = useCreateExpense();
@@ -134,7 +141,7 @@ export default function ExpensesPage() {
           <SelectTrigger className="w-[160px]" data-tour="expenses-category-filter"><SelectValue /></SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Categories</SelectItem>
-            {expenseCategories.map(c => <SelectItem key={c} value={c} className="capitalize">{c}</SelectItem>)}
+            {expenseCategories.map(c => <SelectItem key={c} value={c} className="capitalize">{formatCategory(c)}</SelectItem>)}
           </SelectContent>
         </Select>
       </div>
@@ -159,7 +166,7 @@ export default function ExpensesPage() {
                   <tr key={e.id} className="border-b last:border-0 hover:bg-muted/20">
                     <td className="py-2 px-4 text-muted-foreground">{e.expense_date}</td>
                     <td className="py-2 px-4 font-medium">{e.vendor}</td>
-                    <td className="py-2 px-4"><Badge variant="outline" className="text-[10px] capitalize">{e.category}</Badge></td>
+                    <td className="py-2 px-4"><Badge variant="outline" className="text-[10px] capitalize">{formatCategory(e.category)}</Badge></td>
                     <td className="py-2 px-4 font-medium text-red-600">₦{Number(e.amount).toLocaleString()}</td>
                     <td className="py-2 px-4 text-muted-foreground capitalize">{e.payment_method}</td>
                   </tr>
@@ -190,7 +197,7 @@ export default function ExpensesPage() {
                 <Select value={form.category} onValueChange={v => setForm(f => ({ ...f, category: v }))}>
                   <SelectTrigger><SelectValue /></SelectTrigger>
                   <SelectContent>
-                    {expenseCategories.map(c => <SelectItem key={c} value={c} className="capitalize">{c}</SelectItem>)}
+                    {expenseCategories.map(c => <SelectItem key={c} value={c} className="capitalize">{formatCategory(c)}</SelectItem>)}
                   </SelectContent>
                 </Select>
               </div>

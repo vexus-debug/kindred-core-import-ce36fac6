@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
+import { useClinicTerms } from "@/hooks/useClinicTerms";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -100,6 +102,7 @@ function ToothButton({
 }
 
 export default function DentalChartsPage() {
+  const terms = useClinicTerms();
   const { data: patients = [] } = usePatients();
   const [selectedPatientId, setSelectedPatientId] = useState<string>("");
   const [selectedTooth, setSelectedTooth] = useState<number | null>(null);
@@ -112,6 +115,9 @@ export default function DentalChartsPage() {
   const updateEntry = useUpdateDentalChartEntry();
   const patientId = selectedPatientId || patients[0]?.id;
   const { data: entries = [] } = useDentalChartEntries(patientId);
+
+  // Tooth charting only applies to dental clinics
+  if (!terms.showDentalChart) return <Navigate to="../dashboard" replace />;
 
   // Build per-tooth data
   const toothData: Record<number, {
