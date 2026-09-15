@@ -54,14 +54,14 @@
     --info: 214 80% 52%;
     --info-foreground: 0 0% 100%;
 
-    /* ── Extended dental palette ── */
-    --dental-navy: 215 60% 12%;
-    --dental-navy-light: 215 50% 22%;
-    --dental-teal: 185 75% 30%;
-    --dental-teal-light: 185 60% 44%;
-    --dental-teal-pale: 185 55% 94%;
-    --dental-mint: 170 45% 94%;
-    --dental-cream: 210 20% 98%;
+    /* ── Extended clinic palette ── */
+    --clinic-navy: 215 60% 12%;
+    --clinic-navy-light: 215 50% 22%;
+    --clinic-teal: 185 75% 30%;
+    --clinic-teal-light: 185 60% 44%;
+    --clinic-teal-pale: 185 55% 94%;
+    --clinic-mint: 170 45% 94%;
+    --clinic-cream: 210 20% 98%;
 
     /* ── Slate Blue — sophisticated accent ── */
     --slate: 220 28% 38%;
@@ -275,7 +275,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: var(--stat-card-bar, linear-gradient(90deg, hsl(var(--primary)), hsl(var(--dental-teal-light))));
+  background: var(--stat-card-bar, linear-gradient(90deg, hsl(var(--primary)), hsl(var(--clinic-teal-light))));
 }
 .stat-card:hover {
   transform: translateY(-4px);
@@ -327,7 +327,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--dental-teal-light)), hsl(var(--primary)));
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--clinic-teal-light)), hsl(var(--primary)));
 }
 
 /* ─── Animations ────────────────────────────────────────── */
@@ -406,15 +406,15 @@
 /* Gradient backgrounds */
 .gradient-hero {
   background: linear-gradient(135deg,
-    hsl(var(--dental-teal-pale)) 0%,
+    hsl(var(--clinic-teal-pale)) 0%,
     hsl(var(--background)) 50%,
-    hsl(var(--dental-mint)) 100%);
+    hsl(var(--clinic-mint)) 100%);
 }
 .gradient-animated {
   background: linear-gradient(-45deg,
     hsl(var(--primary)) 0%,
-    hsl(var(--dental-navy)) 25%,
-    hsl(var(--dental-teal-light)) 50%,
+    hsl(var(--clinic-navy)) 25%,
+    hsl(var(--clinic-teal-light)) 50%,
     hsl(185 55% 38%) 75%,
     hsl(var(--primary)) 100%);
   background-size: 400% 400%;

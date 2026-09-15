@@ -58,14 +58,14 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         // Vista Dental custom colors
-        dental: {
-          navy: "hsl(var(--dental-navy))",
-          "navy-light": "hsl(var(--dental-navy-light))",
-          teal: "hsl(var(--dental-teal))",
-          "teal-light": "hsl(var(--dental-teal-light))",
-          "teal-pale": "hsl(var(--dental-teal-pale))",
-          mint: "hsl(var(--dental-mint))",
-          cream: "hsl(var(--dental-cream))",
+        clinic: {
+          navy: "hsl(var(--clinic-navy))",
+          "navy-light": "hsl(var(--clinic-navy-light))",
+          teal: "hsl(var(--clinic-teal))",
+          "teal-light": "hsl(var(--clinic-teal-light))",
+          "teal-pale": "hsl(var(--clinic-teal-pale))",
+          mint: "hsl(var(--clinic-mint))",
+          cream: "hsl(var(--clinic-cream))",
         },
         // Slate Blue — sophisticated accent
         slate: {

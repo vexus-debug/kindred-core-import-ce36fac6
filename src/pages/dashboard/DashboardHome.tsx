@@ -165,7 +165,7 @@ export default function DashboardHome() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 py-1" data-tour="page-header">
           <div>
             <div className="flex items-center gap-2 mb-0.5">
-              <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-primary to-dental-teal-light flex items-center justify-center shadow-md shadow-primary/20">
+              <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-primary to-clinic-teal-light flex items-center justify-center shadow-md shadow-primary/20">
                 <Stethoscope className="h-4 w-4 text-primary-foreground" />
               </div>
               <div>
@@ -275,7 +275,7 @@ export default function DashboardHome() {
           <motion.div variants={stagger.item}>
             <Card className="relative overflow-hidden border-border/50 h-full group hover:shadow-lg hover:border-primary/20 transition-all duration-300">
               {/* Gradient shimmer bg */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.06] via-transparent to-dental-teal-light/[0.06] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.06] via-transparent to-clinic-teal-light/[0.06] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <CardContent className="relative p-5 flex flex-col justify-between h-full">
                 <div className="flex items-center justify-between">
                   <div className="h-9 w-9 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -615,7 +615,7 @@ export default function DashboardHome() {
                     <defs>
                       <linearGradient id="barGrad2" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity={0.9} />
-                        <stop offset="100%" stopColor="hsl(var(--dental-teal-light))" stopOpacity={0.5} />
+                        <stop offset="100%" stopColor="hsl(var(--clinic-teal-light))" stopOpacity={0.5} />
                       </linearGradient>
                     </defs>
                     <CartesianGrid strokeDasharray="3 3" className="stroke-border/20" vertical={false} />
