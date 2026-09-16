@@ -16,6 +16,7 @@ function Empty({ text }: { text: string }) {
 }
 
 export function EyeRecordsTab({ patientId }: { patientId: string }) {
+  const { basePath } = useOrg();
   const { data: exams = [] } = useEyeExams(patientId);
   const { data: rxs = [] } = useOpticalPrescriptions(patientId);
   const { data: fittings = [] } = useContactLensFittings(patientId);

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useClinicTerms } from "@/hooks/useClinicTerms";
+import { useOrg } from "@/hooks/useOrg";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -103,6 +104,8 @@ function ToothButton({
 
 export default function DentalChartsPage() {
   const terms = useClinicTerms();
+  const { currentOrg } = useOrg();
+  const isEyeClinic = currentOrg?.clinic_type === "eye";
   const { data: patients = [] } = usePatients();
   const [selectedPatientId, setSelectedPatientId] = useState<string>("");
   const [selectedTooth, setSelectedTooth] = useState<number | null>(null);
