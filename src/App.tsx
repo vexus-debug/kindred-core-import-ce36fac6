@@ -94,6 +94,8 @@ import ContactLensPage from "./pages/dashboard/eye/ContactLensPage";
 import OpticalOrdersPage from "./pages/dashboard/eye/OpticalOrdersPage";
 import EyeDiagnosticsPage from "./pages/dashboard/eye/EyeDiagnosticsPage";
 import SurgeryBookingsPage from "./pages/dashboard/eye/SurgeryBookingsPage";
+import EyeReportsPage from "./pages/dashboard/eye/EyeReportsPage";
+import EyeChartsPage from "./pages/dashboard/eye/EyeChartsPage";
 
 // Public result lookup
 import PublicResultPage from "./pages/PublicResultPage";
@@ -279,6 +281,8 @@ const App = () => (
               <Route path="eye/contact-lenses" element={<ContactLensPage />} />
               <Route path="eye/orders" element={<OpticalOrdersPage />} />
               <Route path="eye/diagnostics" element={<EyeDiagnosticsPage />} />
+              <Route path="eye/reports" element={<EyeReportsPage />} />
+              <Route path="eye/charts" element={<EyeChartsPage />} />
               <Route path="eye/surgery" element={<SurgeryBookingsPage />} />
             </Route>
             <Route path="*" element={<NotFound />} />

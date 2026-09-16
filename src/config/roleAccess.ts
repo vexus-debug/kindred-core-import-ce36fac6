@@ -76,6 +76,8 @@ export const PAGE_ROLE_ACCESS: Record<string, OrgRole[]> = {
   "eye/contact-lenses": ["owner", "admin", "dentist", "hygienist", "assistant"],
   "eye/orders": ["owner", "admin", "receptionist", "assistant"],
   "eye/diagnostics": ["owner", "admin", "dentist", "hygienist", "lab_technician"],
+  "eye/reports": ["owner", "admin", "dentist", "hygienist", "lab_technician"],
+  "eye/charts": ["owner", "admin", "dentist", "hygienist", "lab_technician"],
   "eye/surgery": ["owner", "admin", "dentist", "receptionist"],
 };
 

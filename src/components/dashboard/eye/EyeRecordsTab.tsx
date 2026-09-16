@@ -4,7 +4,10 @@ import {
   useEyeExams, useOpticalPrescriptions, useContactLensFittings, useOpticalOrders,
   useEyeDiagnostics, useSurgeryBookings, formatRxEye, iopFlag,
 } from "@/hooks/eye/useEye";
-import { Eye, Glasses, Contact, Activity, Scissors } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { useOrg } from "@/hooks/useOrg";
+import { Eye, Glasses, Contact, Activity, Scissors, FileText, LineChart as LineChartIcon } from "lucide-react";
 
 const d = (v?: string | null) => (v ? new Date(v).toLocaleDateString() : "—");
 
@@ -13,6 +16,7 @@ function Empty({ text }: { text: string }) {
 }
 
 export function EyeRecordsTab({ patientId }: { patientId: string }) {
+  const { basePath } = useOrg();
   const { data: exams = [] } = useEyeExams(patientId);
   const { data: rxs = [] } = useOpticalPrescriptions(patientId);
   const { data: fittings = [] } = useContactLensFittings(patientId);
@@ -21,6 +25,19 @@ export function EyeRecordsTab({ patientId }: { patientId: string }) {
   const { data: surgeries = [] } = useSurgeryBookings(patientId);
 
   return (
+    <>
+    <div className="flex flex-wrap gap-2">
+      <Button asChild variant="outline" size="sm">
+        <Link to={`${basePath}/eye/reports?patient=${patientId}`}>
+          <FileText className="mr-1 h-3.5 w-3.5" /> Fundus / OCT / field results
+        </Link>
+      </Button>
+      <Button asChild variant="outline" size="sm">
+        <Link to={`${basePath}/eye/charts?patient=${patientId}`}>
+          <LineChartIcon className="mr-1 h-3.5 w-3.5" /> Eye charts &amp; trends
+        </Link>
+      </Button>
+    </div>
     <div className="grid gap-4 lg:grid-cols-2">
       <Card className="glass-card">
         <CardHeader className="flex flex-row items-center gap-2">
@@ -149,5 +166,6 @@ export function EyeRecordsTab({ patientId }: { patientId: string }) {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 }
