@@ -4,7 +4,10 @@ import {
   useEyeExams, useOpticalPrescriptions, useContactLensFittings, useOpticalOrders,
   useEyeDiagnostics, useSurgeryBookings, formatRxEye, iopFlag,
 } from "@/hooks/eye/useEye";
-import { Eye, Glasses, Contact, Activity, Scissors } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { useOrg } from "@/hooks/useOrg";
+import { Eye, Glasses, Contact, Activity, Scissors, FileText, LineChart as LineChartIcon } from "lucide-react";
 
 const d = (v?: string | null) => (v ? new Date(v).toLocaleDateString() : "—");
 
@@ -162,5 +165,6 @@ export function EyeRecordsTab({ patientId }: { patientId: string }) {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 }
