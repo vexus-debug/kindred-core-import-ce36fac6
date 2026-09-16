@@ -240,6 +240,8 @@ const eyeNav: NavGroup[] = [
       { title: "Contact Lenses", path: "eye/contact-lenses", icon: Contact },
       { title: "Optical Orders", path: "eye/orders", icon: ShoppingCart },
       { title: "Diagnostics", path: "eye/diagnostics", icon: Activity },
+      { title: "Eye Results", path: "eye/reports", icon: FileText },
+      { title: "Eye Charts", path: "eye/charts", icon: Activity },
       { title: "Surgery Bookings", path: "eye/surgery", icon: Scissors },
     ],
   },
