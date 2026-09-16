@@ -21,6 +21,19 @@ export function EyeRecordsTab({ patientId }: { patientId: string }) {
   const { data: surgeries = [] } = useSurgeryBookings(patientId);
 
   return (
+    <>
+    <div className="flex flex-wrap gap-2">
+      <Button asChild variant="outline" size="sm">
+        <Link to={`${basePath}/eye/reports?patient=${patientId}`}>
+          <FileText className="mr-1 h-3.5 w-3.5" /> Fundus / OCT / field results
+        </Link>
+      </Button>
+      <Button asChild variant="outline" size="sm">
+        <Link to={`${basePath}/eye/charts?patient=${patientId}`}>
+          <LineChartIcon className="mr-1 h-3.5 w-3.5" /> Eye charts &amp; trends
+        </Link>
+      </Button>
+    </div>
     <div className="grid gap-4 lg:grid-cols-2">
       <Card className="glass-card">
         <CardHeader className="flex flex-row items-center gap-2">

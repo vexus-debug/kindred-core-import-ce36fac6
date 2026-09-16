@@ -117,7 +117,9 @@ export default function DentalChartsPage() {
   const { data: entries = [] } = useDentalChartEntries(patientId);
 
   // Tooth charting only applies to dental clinics
-  if (!terms.showDentalChart) return <Navigate to="../dashboard" replace />;
+  if (!terms.showDentalChart) {
+    return <Navigate to={isEyeClinic ? "../eye/charts" : "../dashboard"} replace />;
+  }
 
   // Build per-tooth data
   const toothData: Record<number, {
